@@ -3,4 +3,54 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: monospace;
+    border: 1px solid darkslategray;
+}
+a { 
+    font-weight: bold;
+    color: black;
+    
+}
+
+button {
+    outline: none;
+    font-size: 1rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px;
+    height: 100vh;
+    
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    height: 50vh;
+    width: 40vw;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 1px;
+    
+}
+
+.card p {
+    font-size: 1.5rem;
+
+}
+.card-title {
+    font-size: 4rem;
+    
 }

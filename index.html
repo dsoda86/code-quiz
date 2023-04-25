@@ -8,28 +8,29 @@
         <link rel="stylesheet" href="./assets/style.css"/>
     </head>
     <body>
-        <!-- outer div to size and position cards -->
-        <div>
+        <!-- Reference bar for high scores button and countdown timer -->
+        <header class="info" id="info">
+            <a class="high-scores btn" href="#">View Highscores</a>
+            <p id="timer">Timer: 0</p>
+        </header>
 
-            <!-- Reference bar for high scores button and countdown timer -->
-            <div>
-                <button>View Highscores</button>
-                <p>Timer: 0</p>
-            </div>
+        <!-- outer div to size and position cards -->
+        <div class ="container" id="container">
 
             <!-- inner div for main content -->
-            <div>
+            <section class="card">
 
-                <!-- main header for content cards -->
-                <header>
-
-                </header>
-
-                <!-- main quiz card content-->
-                <main>
-
-                </main>
-
+                <!-- main info for content cards / h1 becomes card question -->
+                <h1 class="card-title" id="card-title">Coding Quiz Challenge</h1>
+                <p>Welcome to the coding quiz! You will be given multiple-choice question
+                    to complete before the timer runs out. Incorrect answers will deduct 10
+                    seconds from the timer. The quiz ends when you finish all questions or timer
+                    runs out. Click start to begin. Good Luck!
+                </p>
+                <!--answer choices for question-->
+                <ul id="choices"></ul>
+                <!--Start quiz and timer-->
+                <button id="start-btn">Start Quiz!</button>
             </div>
 
         </div>
