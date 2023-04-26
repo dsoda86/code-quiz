@@ -1,33 +1,66 @@
-// GIVEN I am taking a code quiz
+// Starting with the quiz questions object arrays
+var questions = [
+     {
+          cardTitle: "Commonly used data types DO NOT include:",
+          choices: ["strings", "alerts", "numbers", "booleans"],
+          answer: "alerts"
+     },
+     {
+          cardTitle: "The condition in an if / else statement is enclosed within _____.",
+          choices: ["parentheses", "quotes", "curly brackets", "square brackets"],
+          answer: "parentheses"
+     },
+     {
+          cardTitle: "A very useful tool used during development and debugging for printing content to the debugger is:",
+          choices: ["Javascript", "terminal / bash", "for loops", "console.log"],
+          answer: "console.log"
+     },
+     {
+          cardTitle: "String values must be enclosed within ______ when being assigned to variables.",
+          choices: ["commas", "curly brackets", "quotes", "parentheses"],
+          answer: "quotes"
+     },
+     {
+          cardTitle: "Arrays in Javascript can be used to store which of the following:",
+          choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
+          answer: "all of the above"
+     },
+];
+
+// Variables possibly needed declared using getElementById
+var timer = document.getElementById("timer");
+var questions = document.getElementById("card-title");
+var choices = document.getElementById("choices");
+var startButton = document.getElementById("start-btn")
+
+
 
 // WHEN I click the start button
 // THEN a timer starts and I am presented with a question
 // Something  similar to countdown from activities needed
-// function countdown() {
-//   var timeLeft = 5;
 
-  // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
-//   var timeInterval = setInterval(function () {
-     // As long as the `timeLeft` is greater than 1
-//     if (timeLeft > 1) {
-      // Set the `textContent` of `timerEl` to show the remaining seconds
-//       timerEl.textContent = timeLeft + ' seconds remaining';
-       // Decrement `timeLeft` by 1
-//       timeLeft--;
-//     } else if (timeLeft === 1) {
-       // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
-//       timerEl.textContent = timeLeft + ' second remaining';
-//       timeLeft--;
-//     } else {
-     // Once `timeLeft` gets to 0, set `timerEl` to an empty string
-//       timerEl.textContent = '';
-      // Use `clearInterval()` to stop the timer
-//       clearInterval(timeInterval);
-       // Call the `displayMessage()` function
-//       displayMessage();
-//     }
-//   }, 1000);
-// }
+startButton.addEventListener("click", function() {
+
+// function countdown() {
+//      render(questionsIndex);
+     var timeLeft = 75;
+     var timeInterval = setInterval(function () {
+    
+    if (timeLeft > 1) {
+      timer.textContent = timeLeft + ' seconds remaining';
+      timeLeft--;
+
+    } else if (timeLeft === 1) {
+      timer.textContent = timeLeft + ' second remaining';
+      timeLeft--;
+
+    } else {
+      timer.textContent = '';
+      clearInterval(timeInterval);
+    }
+  }, 1000);
+})
+
 
 // Something similar to this activity example might be needed to make question cards hidden/visible?
 // var container = document.querySelector(".container");
