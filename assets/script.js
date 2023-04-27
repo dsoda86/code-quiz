@@ -47,12 +47,11 @@ var timeInterval;
 // Something  similar to countdown from activities needed
 
 startButton.addEventListener("click", function() {
-
- // function countdown() {
+     startQuiz()
      var timeLeft = 75;
      var timeInterval = setInterval(function () {
     
-    if (timeLeft > 1) {
+     if (timeLeft > 1) {
       timer.textContent = timeLeft + ' seconds remaining';
       timeLeft--;
 
@@ -64,11 +63,16 @@ startButton.addEventListener("click", function() {
       timer.textContent = '';
       clearInterval(timeInterval);
     }
-  }, 1000);
+    }, 1000);
+    
 })
 
 // Need to make questions come up after start button clicked
 // Something similar to this activity example might be needed to make question cards hidden/visible?
+function startQuiz() {
+     var quizStart = document.getElementById("quiz-start");
+     quizStart.setAttribute("class", "hide");
+}
 // var container = document.querySelector(".container");
 
 // container.addEventListener("click", function(event) {
