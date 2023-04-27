@@ -29,10 +29,17 @@ var questions = [
 
 // Variables possibly needed declared using getElementById
 var timer = document.getElementById("timer");
-var questions = document.getElementById("card-title");
+var questionCard = document.getElementById("quiz-questions")
+var questions = document.getElementById("question-title");
 var choices = document.getElementById("choices");
 var startButton = document.getElementById("start-btn")
-
+var cardTitle = document.getElementById("card-title")
+var quizEnd = document.getElementById("quiz-end")
+var finalScore = document.getElementById("final-score")
+var initials = document.getElementById("initials")
+var submitButton = document.getElementById("submit-btn")
+var timeLeft;
+var timeInterval;
 
 
 // WHEN I click the start button
@@ -41,8 +48,7 @@ var startButton = document.getElementById("start-btn")
 
 startButton.addEventListener("click", function() {
 
-// function countdown() {
-//      render(questionsIndex);
+ // function countdown() {
      var timeLeft = 75;
      var timeInterval = setInterval(function () {
     
@@ -61,7 +67,7 @@ startButton.addEventListener("click", function() {
   }, 1000);
 })
 
-
+// Need to make questions come up after start button clicked
 // Something similar to this activity example might be needed to make question cards hidden/visible?
 // var container = document.querySelector(".container");
 

@@ -16,23 +16,31 @@
 
         <!-- outer div to size and position cards -->
         <div class ="container" id="container">
-
-            <!-- inner div for main content -->
-            <section class="card">
-
-                <!-- main info for content cards / h1 becomes card question -->
+            <!-- Quiz start screen card -->
+            <div class="card-start" id="quiz-start">
                 <h1 class="card-title" id="card-title">Coding Quiz Challenge</h1>
                 <p>Welcome to the coding quiz! You will be given multiple-choice question
                     to complete before the timer runs out. Incorrect answers will deduct 10
                     seconds from the timer. The quiz ends when you finish all questions or timer
                     runs out. Click start to begin. Good Luck!
                 </p>
-                <!--answer choices for question-->
-                <ul id="choices"></ul>
                 <!--Start quiz and timer-->
                 <button class="start-btn btn" id="start-btn">Start Quiz!</button>
             </div>
 
+            <!-- Quiz questions cards-->
+            <div class="hide" id="quiz-questions">
+                <h2 id="question-title"></h2>
+                <div class="choices" id="choices"></div>
+            </div>
+
+            <div class="hide" id="quiz-end">
+                <h2>Quiz Over!</h2>
+                <p>Final Score: <span id="final-score"></span>.</p>
+                <p>Initials: <input type="text" id="initials" max="3"/>
+                <button id="submit-btn">Submit!</button>
+                </p>
+            </div>
         </div>
         <script src="./assets/script.js"></script>   
     </body>
