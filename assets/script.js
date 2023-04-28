@@ -29,7 +29,7 @@ var questions = [
 
 // Variables possibly needed declared using getElementById
 var timer = document.getElementById("timer");
-var questionCard = document.getElementById("quiz-questions")
+// var questionCard = document.getElementById("quiz-questions")
 // var questions = document.getElementById("question-title"); using locally in function showQuestion()
 var choices = document.getElementById("choices");
 var startButton = document.getElementById("start-btn")
@@ -63,36 +63,37 @@ startButton.addEventListener("click", function() {
       timer.textContent = '';
       clearInterval(timeInterval);
     }
-    }, 1000);
-    // need a function to show/link to high score / initials page
+    }, 1000); 
+    showQuestion();
+    
 })
 
-
+// hides start screen
 function startQuiz() {
      var quizStart = document.getElementById("quiz-start");
      quizStart.setAttribute("class", "hide");
-
+     
 }
 
-// still need a function to get the questions card to show after making start screen hidden
+// Supposed to load questions with this function but can't get it to work
 function showQuestion() {
+     questionCard.removeAttribute("class")
      var activeQuestion = questions[activeQuestionIndex];
      var questions = document.getElementById("question-title");
-     questions.textContent = activeQuestion.questionTitle;
+     questions.textContent = activeQuestion.title;
      choices.innerHTML = " ";
 
-     activeQuestion.choices.forEach(function(choices, i) {
+     for (var i =0; i < questions.length; i++) {
           var choiceButton = document.createElement("button");
           choiceButton.setAttribute("class", "choices");
-          choiceButton.setAttribute("value", choices);
+          choiceButton.setAttribute("id", choices);
 
-         // choiceButton.textContent = i + 1 + ". " choices; 
-         // choiceButton.onclick = something here for correct/incorrect sound maybe?
-
-          // choices.appendChild(choiceButton); something like this to show choices buttons on page maybe?
-     });
+          choiceButton.textContent = choices; 
+          choiceButton.onclick = choicesClick;
+          choices.appendChild(choiceButton); 
+     };
 }
-
+// something like this to click on buttons that should be loading. Added in sound for right and wrong answers but can't test because questions won't load
 function choicesClick() {
      if (choices.value !== questions[activeQuestionIndex].answer) {
           timeLeft -= 10;
@@ -110,9 +111,15 @@ function choicesClick() {
      activeQuestionIndex++;
      
      if (activeQuestionIndex === questions.length) {
-          // need to call a function that ends the quiz and shows the initial/high scores page
+          endQuiz()
+     }else {
+          showQuestion();
      }
 }    
+
+function endQuiz() {
+    // Should show quiz end div with score, initial input, and submit button
+     }
 
 
 
@@ -132,68 +139,6 @@ function choicesClick() {
 // Will likely need document.querySelector or document.getElementById
 // Will likely need localStorage.setItem and localStorage.getItem
 
-// Something like this needed to store and get high scores
-// The following function renders items in a todo list as <li> elements
-// function renderTodos() {
-     // Clear todoList element and update todoCountSpan
-//     todoList.innerHTML = "";
-//     todoCountSpan.textContent = todos.length;
-  
-     // Render a new li for each todo
-//     for (var i = 0; i < todos.length; i++) {
-//       var todo = todos[i];
-  
-//       var li = document.createElement("li");
-//       li.textContent = todo;
-//       li.setAttribute("data-index", i);
-  
-//       var button = document.createElement("button");
-//       button.textContent = "Complete ✔️";
-  
-//       li.appendChild(button);
-//       todoList.appendChild(li);
-//     }
-//   }
-  
-   // This function is being called below and will run when the page loads.
-//   function init() {
-     // Get stored todos from localStorage
-//     var storedTodos = JSON.parse(localStorage.getItem("todos"));
-  
-     // If todos were retrieved from localStorage, update the todos array to it
-//     if (storedTodos !== null) {
-//       todos = storedTodos;
-//     }
-  
-     // This is a helper function that will render todos to the DOM
-//     renderTodos();
-//   }
-  
-//   function storeTodos() {
-     // Stringify and set key in localStorage to todos array
-//     localStorage.setItem("todos", JSON.stringify(todos));
-//   }
-  
-  // Add submit event to form
-//   todoForm.addEventListener("submit", function(event) {
-//     event.preventDefault();
-  
-//     var todoText = todoInput.value.trim();
-  
-     // Return from function early if submitted todoText is blank
-//     if (todoText === "") {
-//       return;
-//     }
-  
-     // Add new todoText to todos array, clear the input
-//     todos.push(todoText);
-//     todoInput.value = "";
-  
-    // Store updated todos in localStorage, re-render the list
-//     storeTodos();
-//     renderTodos();
-//   });
-  
    // Add click event to todoList element
 //   todoList.addEventListener("click", function(event) {
 //     var element = event.target;

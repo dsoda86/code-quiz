@@ -9,29 +9,29 @@
     </head>
     <body>
         <!-- Reference bar for high scores button and countdown timer -->
-        <header class="info" id="info">
-            <a class="high-scores btn" href="#">View Highscores</a>
+        <header id="info" class="info">
+            <a class="high-scores" href="highscores.html">View Highscores</a>
             <p id="timer">Timer: 75 seconds</p>
         </header>
 
         <!-- outer div to size and position cards -->
-        <div class ="container" id="container">
+        <div id="container" class ="container" >
             <!-- Quiz start screen card -->
-            <div class="card-start" id="quiz-start">
-                <h1 class="card-title" id="card-title">Coding Quiz Challenge</h1>
+            <div id="quiz-start" class="card-start" >
+                <h1 id="card-title"  class="card-title" >Coding Quiz Challenge</h1>
                 <p>Welcome to the coding quiz! You will be given multiple-choice question
                     to complete before the timer runs out. Incorrect answers will deduct 10
                     seconds from the timer. The quiz ends when you finish all questions or timer
                     runs out. Click start to begin. Good Luck!
                 </p>
                 <!--Start quiz and timer-->
-                <button class="start-btn btn" id="start-btn">Start Quiz!</button>
+                <button id="start-btn" class="start-btn btn" >Start Quiz!</button>
             </div>
 
             <!-- Quiz questions cards-->
-            <div class="hide" id="quiz-questions">
+            <div id="quiz-questions" class="hide">
                 <h2 id="question-title"></h2>
-                <div class="choices" id="choices"></div>
+                <div id="choices" class="choices" ></div>
                 <audio id="correct">
                     <source src="./assets/correct.wav"/>
                 </audio>
@@ -40,7 +40,7 @@
                 </audio>
             </div>
 
-            <div class="hide" id="quiz-end">
+            <div id="quiz-end" class="hide">
                 <h2>Quiz Over!</h2>
                 <p>Final Score: <span id="final-score"></span>.</p>
                 <p>Initials: <input type="text" id="initials" max="3"/>
